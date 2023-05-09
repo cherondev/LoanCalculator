@@ -1,0 +1,122 @@
+:root{
+   --primary-color: #1d5888;
+   --secondary-color: #ff993b;
+   --dark-color: #292929;
+   --white-color: #e7e7e7;
+   --page-color: #FBFBF9;
+   --checklist-color: #D03300;
+   --header-footer-color: #17609d;
+}
+
+/*Google Fonts*/
+.font-racing-sans-one{
+   font-family: 'Racing Sans One', cursive;
+}
+
+cite {
+   font-style: italic;
+   font-size:x-small;
+ }
+
+ .odd {
+   font-weight: 100;
+ }
+
+ .even {
+   font-weight: bold;
+   font-size: large;
+   color: red;
+ }
+/* My styles */
+ol > li{
+   padding-bottom: .5em;
+}
+
+ .page-color{
+   background-color: var(--page-color);
+ }
+
+ .page-title{
+   color: #17609d;
+ }
+
+ .checklist > li i{
+   color: var(--checklist-color);
+}
+/* FizzBuzz colors */
+.Fizz{
+   color: orange !important;
+}
+
+.Buzz{
+   color: blue !important;
+}
+
+.FizzBuzz{
+   color: red !important;
+   font-weight: bold !important;
+}
+/* Icon colors */
+.bsicon{
+   color: #8312FA;
+}
+
+.jsicon{
+   color: #F0DB4F;
+}
+
+.html5icon{
+   color: #E44D26;
+}
+
+.css3icon{
+   color: #0A71B8;
+}
+/* End My styles */
+body{
+   color: var(--dark-color);
+}
+
+nav{
+   background-color: var(--dark-color);
+}
+
+footer{
+   background-color: var(--dark-color);
+}
+
+h1,h2,h3,h4,h5,h6{
+   color: var(--primary-color);
+}
+
+footer{
+   padding-right: 1rem;
+}
+
+footer .social>a{
+   color: var(--white-color);
+   opacity: 0.75;
+}
+
+footer .social>a:hover{
+   opacity: 0.9;
+   color: var(--secondary-color);
+}
+
+code[class*="language-"],
+   pre[class*="language-"] {
+   white-space: pre-wrap;
+   word-break: break-all;
+   word-wrap: break-word;
+   }
+
+main>.container {
+   padding: 60px 15px 0;
+   margin-bottom: 5rem;
+}
+.sticky-footer {
+   position: sticky;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}

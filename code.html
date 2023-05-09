@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+	<head>
+		<title>FIZZ BUZZ: A Coding Project by CHeron</title>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+		<!-- Bootstrap CSS -->
+		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+		<script
+			src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous" ></script>
+		<link rel="stylesheet" href="css/site.css" />
+		<link rel="icon" href="img/favicon_io/favicon-32x32.png" type="image/png" />
+		<link rel="stylesheet" href="css/prism.css">
+	</head>
+
+	<body class="d-flex flex-column h-100">
+		<!-- === Nav Section === -->
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/index.html"><img
+						src="img/favicon_io/favicon-32x32.png" alt="Norech Tech Logo" class="d-inline-block align-text-top" width="30" height="24" /> FIZZ BUZZ</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav me-auto mb-2 mb-md-0">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="app.html">The App</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page"  href="code.html">The Code</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/cherondev/Loops" target="_blank">Git Repo</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#portfolio-link" target="_blank">About</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- === Main Section === -->
+		<main class="flex-shrink-0">
+         <div class="container py-4 px-5 mt-5">
+				<h2 class="norder-1 border-bottom border-dark">The Code for FIZZ BUZZ</h2>
+				<div class="row row-cols-1 row-cols-lg-2">
+					<div class="col-lg-8">
+						<pre class="line-numbers">
+							<code class="language-javascript">
+								//Get from values from the user. We need to get the fizz vand the buzz values.
+								function getValues() {
+									//Get user values from the page
+									let fizzValue = document.getElementById("fizzValue").value;
+									let buzzValue = document.getElementById("buzzValue").value;
+
+									//Check for numbers (Parse into integer)
+									fizzValue = parseInt(fizzValue);
+									buzzValue = parseInt(buzzValue);
+
+									//Check that the numbers are integers
+									if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
+
+										//Call fizzBuzz function
+										let fbArray = fizzBuzz(fizzValue, buzzValue);
+
+										//Take return from fixxBuzz and call displayData function and write values to screen
+										displayData(fbArray);
+									} else {
+										alert("You must enter an integer");
+									}
+								}
+
+								//Generate numbers from fizzValue to the buzzValue
+								//Logic function(s)
+								function fizzBuzz(fizzValue, buzzValue) {
+									//Initialize array
+									let returnArray = [];
+
+									//Loop from 1 to 100
+									for (let i = 1; i <= 100; i++) {
+
+										//check to see if divisible by both 3 and 5
+										//check t see if divisible by fizz value 3
+										//check t see if divisible by buzz value 5
+										if (i % fizzValue == 0 && i % buzzValue == 0) {
+											returnArray.push("FizzBuzz");
+										} else if (i % fizzValue == 0) {
+											returnArray.push("Fizz");
+										} else if (i % buzzValue == 0) {
+											returnArray.push("Buzz");
+										} else {
+											returnArray.push(i);
+										}
+									}
+									//Return the array
+									return returnArray;
+								}
+								//Display function
+								function displayData(fbArray) {
+
+									//get the table body element from the page
+									let tableBody = document.getElementById("results");
+
+									//get the templage row
+									let templateRow = document.getElementById("fbTemplate");
+
+									//clear table first
+									tableBody.innerHTML = "";
+
+									for (let index = 0; index < fbArray.length; index += 5) {
+										
+										let tableRow = document.importNode(templateRow.content, true);
+
+										//grab just the TDs and put them into an array
+										let rowCols = tableRow.querySelectorAll("td");
+
+										rowCols[0].classList.add(fbArray[index]);
+										rowCols[0].textContent = fbArray[index];
+
+										rowCols[1].classList.add(fbArray[index + 1]);
+										rowCols[1].textContent = fbArray[index + 1];
+										
+										rowCols[2].classList.add(fbArray[index + 2]);
+										rowCols[2].textContent = fbArray[index + 2];
+										
+										rowCols[3].classList.add(fbArray[index + 3]);
+										rowCols[3].textContent = fbArray[index + 3];
+										
+										rowCols[4].classList.add(fbArray[index + 4]);
+										rowCols[4].textContent = fbArray[index + 4];
+										
+										tableBody.appendChild(tableRow);
+									}
+								}
+
+							</code>
+						</pre>
+							</div>
+							<div class="col-lg-4">
+								<h5>FIZZ BUZZ</h5>
+								<p>Fizz Buzz is an app that displays each number from 1 to 100.For each multiple of 3, display "<strong>Fizz</strong>" instead of the number. For each multiple of 5, display "<strong>Buzz</strong>" instead of the number. For numbers which are multiples of both 3 and 5, display "<strong>FizzBuzz</strong>" instead of the number.</p>
+								<h5>Function: getValues()</h5>
+									<p><ol>
+										<li>This function gets the fizz and buzz values from the user.</li>
+										<li>The values are then parsed into an Integer, then validated to ensure they are numeric by using the <strong>Numeric</strong> property of the <strong>isInteger</strong> method.</li>
+										<li>If the values are numeric, the fizzBuzz() function is called with two parameters (fizzValue and buzzValue) which are passed to the fizzBuzz() function. These parameters contain the input values from the user</li>
+										<li>Then, displayData() function is called. This function will display the output on the screen.</li>
+										<li>If not, an alert is generated with the message, "You must enter an integer.</li>
+										</ol>
+									</p>
+									<h5>Function: fizzBuzz()</h5>
+									<p><ol>
+										<li>This function is initiated with two arguments, fizzValue and buzzValue.</li>
+										<li>An empty array is initiated called returnArray.</li>
+										<li>A for loop is used to loop throught the number 1 to 100.</li>
+										<li>Each time through teh loop, an <strong>if</strong> statement checks to see if both fizzValue and buzzValue are divisible by 3 and 5 or by the numbers entered by the user. If that check evaluaes to a remainder of zero(0), the word "FizzBuzz" is pushed into the array called returnArray.</li>
+
+										<li>An <strong>else if</strong> statement checks to see if fizzValue is divisible by 3.  If that check evaluaes to a remainder of zero(0), the word "Fizz" is pushed into the array called returnArray.</li>
+										<li>A second <strong>else if</strong> statement checks to see if buzzValue is divisible by 5.  If that check evaluaes to a remainder of zero(0), the word "Buzz" is pushed into the array called returnArray.</li>
+
+										<li>Lastly, if none of those conditions checks out, an <strong>else</strong> statement is used to pushed everything else into the array called returnArray.</li>
+
+										<li>Finally, the array is returned and passed to the displayData() function with the parameter, fbArray.</li>
+										</ol>
+									</p>
+									<h5>Function: displayData()</h5>
+									<p><ol>
+											<li>The function is implemented with an argument. The argument takes fbArray which was returned via the fizzBuzz() function.</li>
+											<li>The tableBody and templateRow variables are initiated by retrieving the respective "results" and "fbTemplate" elements from the page</li>
+											<li>The table is first cleared by setting it to blank.</li>
+											<li>A for loop is used to loop through the fbArray and increment it by 5.</li>
+											<li>The content in the template is retrieved via the document.importNode() medthod and assigned to tableRow. </li>
+											<li>The table data (TDs) are extrated and assigned to an array called rowCols.</li>
+											<li>The for loop cycles through the fbArray and assigns 5 records at a time to rowCols array.</li>
+											<li>Likewise, the classList() method is used to add any CSS class to the TD tag each time through the array.</li>
+											<li>Finally, the tableBody.appendChild() method is used to output the tableRow data to the screen.</li>
+										</ol>
+									</p>
+					</div>
+				</div>
+         </div>
+		</main>
+		<!-- === Footer Section === -->
+		<footer class="footer mt-auto py-3">
+			<div class="container-fluid">
+				<div class="row row-cols-1 row-cols-lg-3 gy-2">
+					<div
+						class="col text-light order-last order-lg-first d-flex justify-content-center justify-content-lg-center"
+					>
+						<div>
+							<span text-muted
+								>&copy;
+								<script>
+									document.write(new Date().getFullYear());
+								</script></span
+							>
+							NorehcTech | cherongen@outlook.com
+						</div>
+					</div>
+					<div
+						class="col d-flex align-items-center justify-content-center justify-content-lg-center"
+					>
+					<img src="/img/nt-logo-v6-Final-for-web-1592x167.svg" alt="Norech Tech Logo" height="30" />
+					</div>
+					<div
+						class="col d-flex align-items-center justify-content-center justify-content-lg-end"
+					>
+						<div class="row">
+							<div class="col social">
+								<a href="#" target="_blank"
+									><i class="fab fa-linkedin fa-2x"></i
+								></a>
+							</div>
+							<div class="col social">
+								<a href="https://github.com/cherondev/Loops" target="_blank"
+									><i class="fab fa-github fa-2x"></i
+								></a>
+							</div>
+							<div class="col social">
+								<a href="#" target="_blank"
+									><i class="fab fa-twitter fa-2x"></i
+								></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Bootstrap JS -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+			crossorigin="anonymous"></script>
+			<script src="js/prism.js"></script>
+			<script>
+				Prism.plugins.NormalizeWhitespace.setDefaults({
+				'remove-trailing': true,
+				'remove-indent': true,
+				'left-trim': true,
+				'right-trim': true
+				})
+			</script>
+	</body>
+</html>

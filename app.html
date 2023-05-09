@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+	<head>
+		<title>FIZZ BUZZ: A Coding Project by CHeron</title>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+		<!-- Bootstrap CSS -->
+		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://kit.fontawesome.com/5db21ba9c6.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="css/site.css" />
+		<link rel="icon" href="img/favicon_io/favicon-32x32.png" type="image/png" />
+	</head>
+
+	<body class="d-flex flex-column h-100">
+		<!-- === Nav Section === -->
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html"
+					><img
+					src="img/favicon_io/favicon-32x32.png" alt="Norech Tech Logo" class="d-inline-block align-text-top" width="30" height="24" /> FIZZ BUZZ</a
+				>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav me-auto mb-2 mb-md-0">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="app.html">The App</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="code.html">The Code</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://github.com/cherondev/Loops" target="_blank">Git Repo</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#portfolio-link" target="_blank">About</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- === Main Section === -->
+		<main class="flex-shrink-0">
+         <div class="container mt-5">
+				<div class="row row-cols-1 row-cols-lg-2">
+					<div class="col col-lg-4 border-end border-2">
+						<h4>FIZZ BUZZ: A Coding Project</h4>
+						<h4 class="lead mt-3">Fizz Buzz displays each number from 1 to 100 and writes out "<strong>Fizz</strong>" and  for each multiple of 3 and "<strong>Buzz</strong>" for each multiple of 5. For numbers which are multiples of both 3 and 5, "<strong>FizzBuzz</strong>" is written.</h4>
+														
+						<h2 class="mt-5 border-bottom border-2">Instructions</h2>
+						<p>Enter a fizz and a buzz value. Click the button and the values will appear.</p>
+					</div>
+					<div class="col col-lg-8">
+						<div>
+							<!-- <h5>Enter Values</h5> -->
+							<form class="row gy-2 gx-3" action="">
+								<div class="col">
+									<label class="form-label" for="fizzValue"><h5>Enter a Fizz number</h5></label>
+									<input id="fizzValue" type="number" class="form-control" placeholder="Fizz Value" value="3" aria-label="Fizz Value">
+								</div>
+
+								<div class="col">
+									<label class="form-label" for="buzzValue"><h5>Enter a Buzz number</h5></label>
+									<input id="buzzValue" type="number" class="form-control" placeholder="Buzz Value" value="5" aria-label="Buzz Value">
+								</div>
+								<div class="col-12 d-flex justify-content-end">
+									<button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Buzz It</button>
+								</div>
+							</form>
+							<h2 class="mt-5 border-bottom border-2">Results</h2>
+							<div class="table-responsive">
+								<table class="table table-striped table-sm">
+									<tbody id="results">
+										<!-- Results Go Here -->
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+         </div>
+		</main>
+		<!-- === Footer Section === -->
+		<footer class="footer mt-auto py-3">
+			<div class="container-fluid">
+				<div class="row row-cols-1 row-cols-lg-3 gy-2">
+					<div
+						class="col text-light order-last order-lg-first d-flex justify-content-center justify-content-lg-center"
+					>
+						<div>
+							<span text-muted
+								>&copy;
+								<script>
+									document.write(new Date().getFullYear());
+								</script></span
+							>
+							NorehcTech | cherongen@outlook.com
+						</div>
+					</div>
+					<div
+						class="col d-flex align-items-center justify-content-center justify-content-lg-center"
+					>
+					<img src="/img/nt-logo-v6-Final-for-web-1592x167.svg" alt="Norech Tech Logo" height="30" />
+					</div>
+					<div
+						class="col d-flex align-items-center justify-content-center justify-content-lg-end"
+					>
+						<div class="row">
+							<div class="col social">
+								<a href="#" target="_blank"
+									><i class="fab fa-linkedin fa-2x"></i
+								></a>
+							</div>
+							<div class="col social">
+								<a href="https://github.com/cherondev/Loops" target="_blank"
+									><i class="fab fa-github fa-2x"></i
+								></a>
+							</div>
+							<div class="col social">
+								<a href="#" target="_blank"
+									><i class="fab fa-twitter fa-2x"></i
+								></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<template id="fbTemplate">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</template>
+
+
+		<!-- Bootstrap JS -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+			crossorigin="anonymous"
+		></script>
+		<script src="js/site.js"></script>
+		<script>
+			document.getElementById("btnSubmit").addEventListener("click", getValues);
+		</script>
+	</body>
+</html>
